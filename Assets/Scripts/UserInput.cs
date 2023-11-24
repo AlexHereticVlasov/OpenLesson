@@ -20,11 +20,11 @@ public class UserInput : MonoBehaviour
 
         if (Input.GetKey(KeyCode.A))
         {
-            _player.Move(Vector3.right, 0, 2);
+            _player.Move(Vector3.left, 1, 3);
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            _player.Move(Vector3.left, 1, 3);
+            _player.Move(Vector3.right, 0, 2);
         }
     }
 }

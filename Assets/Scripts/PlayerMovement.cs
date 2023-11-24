@@ -9,15 +9,15 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(Vector3 direction, int first, int second)
     {
-        if (IsObsticle(_points[first], direction) || IsObsticle(_points[second], direction))
+        if (CanMove(_points[first], direction) && CanMove(_points[second], direction))
         {
             transform.Translate(direction * Time.deltaTime * _speed);
         }
 
     }
 
-    private bool IsObsticle(Transform point ,Vector3 direction)
+    private bool CanMove(Transform point ,Vector3 direction)
     {
-        return (Physics.Raycast(transform.position, direction, 0.5f, _mask)) == false;
+        return (Physics.Raycast(point.position, direction, 0.5f, _mask)) == false;
     }
 }
