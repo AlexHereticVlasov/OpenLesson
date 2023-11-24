@@ -13,7 +13,7 @@ public class Coin : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.tag == "Player")
+        if (other.TryGetComponent(out PlayerMovement player))
         {
             //ToDO: Collect coin
             var effect = Instantiate(_particle, transform.position, transform.rotation);

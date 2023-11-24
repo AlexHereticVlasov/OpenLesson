@@ -10,14 +10,3 @@ public class Enemy : MonoBehaviour
         }
     }
 }
-
-public sealed class Test : MonoBehaviour
-{
-    [SerializeField] float _value;
-
-    private void Update()
-    {
-        _value = GetComponent<Transform>().position.x;
-        Debug.Log($"{_value}");
-    }
-}

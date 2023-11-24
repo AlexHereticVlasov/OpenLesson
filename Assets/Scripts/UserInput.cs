@@ -9,22 +9,12 @@ public class UserInput : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.W))
-        {
-            _player.Move(Vector3.forward, 0, 1);
-        }
-        else if (Input.GetKey(KeyCode.S))
-        {
-            _player.Move(Vector3.back, 2, 3);
-        }
+        float x = 0;
+        float z = 0;
 
-        if (Input.GetKey(KeyCode.A))
-        {
-            _player.Move(Vector3.left, 1, 3);
-        }
-        else if (Input.GetKey(KeyCode.D))
-        {
-            _player.Move(Vector3.right, 0, 2);
-        }
+        x = Input.GetAxisRaw("Horizontal");
+        z = Input.GetAxisRaw("Vertical");
+
+        _player.Move(x, z);
     }
 }
